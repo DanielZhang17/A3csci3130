@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name = "BusinessType">
+        <item>Fisher</item>
+        <item>Distributor</item>
+        <item>Processor</item>
+        <item>Fish Monger</item>
+    </string-array>
+    <string-array name="Province_territory">
+        <item>AB</item>
+        <item>BC</item>
+        <item>MB</item>
+        <item>NB</item>
+        <item>NL</item>
+        <item>NS</item>
+        <item>NT</item>
+        <item>NU</item>
+        <item>ON</item>
+        <item>PE</item>
+        <item>QC</item>
+        <item>SK</item>
+        <item>YT</item>
+        <item></item>
+    </string-array>
+</resources>

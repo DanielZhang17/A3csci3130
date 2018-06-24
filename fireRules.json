@@ -1,16 +1,27 @@
-{
+{{
   "rules": {
-    ".read": "true",
-    ".write": "true",
-    "contacts": {
-            "$contact": {
-                "name": {
-                    ".validate": "newData.isString() && newData.val().length < 50"
-                },
-                "email": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
-                }
-            }
-        }
+    ".read": true,
+    ".write": true,
+  "businesses":{
+    "$business":{
+      "business number":{
+        ".validate":"newData.isNumber() && newData.val()>=100000000 &&newData.val()<=999999999"
+      },
+      "name":{
+          ".validate":"newData.isString() 
+          && newData.val().length >=2 
+          && newData.val().length <=48"
+      },
+      "primary business":{
+            ".validate":"newData.isString()"
+      },
+      "address":{
+              ".validate":"newData.isString() && newData.val().length <50"
+      },
+      "province":{
+                ".validate":"newData.isString()"
+      }
+    }
+    }
   }
 }
