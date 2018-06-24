@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,12 +34,11 @@ public class MainActivity extends Activity {
         ListView = (ListView) findViewById(R.id.listView);
 
         //Set up the List View
-       firebaseAdapter = new FirebaseListAdapter<Business>(this, Business.class,
-                android.R.layout.simple_list_item_1, appData.firebaseReference) {
+       firebaseAdapter = new FirebaseListAdapter<Business>(this, Business.class, android.R.layout.simple_list_item_1, appData.firebaseReference) {
             @Override
             protected void populateView(View v, Business model, int position) {
-                TextView contactName = (TextView)v.findViewById(android.R.id.text1);
-                contactName.setText(model.getName());
+                TextView Name = (TextView)v.findViewById(android.R.id.text1);
+                Name.setText(model.getName());
             }
         };
         ListView.setAdapter(firebaseAdapter);
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
             // onItemClick method is called everytime a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Business business = (Business) firebaseAdapter.getItem(position);
+                Business business = firebaseAdapter.getItem(position);
                 showDetailView(business);
             }
         });

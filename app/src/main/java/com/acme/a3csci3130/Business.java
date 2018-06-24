@@ -53,10 +53,10 @@ public class Business implements Serializable {
     public String getProvince() {
         return province;
     }
-
     public  String getUID(){
         return UID;
     }
+
     @Exclude
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();

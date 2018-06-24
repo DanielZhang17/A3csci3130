@@ -19,6 +19,7 @@ public class DetailViewActivity extends Activity {
     private Spinner businessType, prov;
     private MyApplicationData appState;
     Business receivedInfo;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +43,12 @@ public class DetailViewActivity extends Activity {
             address.setText(receivedInfo.getAddress());
             businessType.setSelection(arrayAdapter1.getPosition(receivedInfo.getPrimaryBusiness()));
             prov.setSelection(arrayAdapter2.getPosition(receivedInfo.getProvince()));
+            uid = receivedInfo.getUID();
+            Toast.makeText(getApplicationContext(),receivedInfo.getUID(),Toast.LENGTH_LONG).show();
         }
     }
 
     public void update(View v){
-        //TODO: Update contact funcionality
         String t = num.getText().toString();
         if(t.length()<9){
             num.setError("This field should be a 9 digit number !");
@@ -69,9 +71,12 @@ public class DetailViewActivity extends Activity {
         }
         String PB = businessType.getSelectedItem().toString();
         String Prov = prov.getSelectedItem().toString();
-        String id = receivedInfo.getUID();
-        Business business = new Business(n,Cname,PB,Address,Prov,id);
-        appState.firebaseReference.child(id).setValue(business).addOnCompleteListener(new OnCompleteListener<Void>() {
+        if(uid==null){
+            Toast.makeText(getApplicationContext(),"Sorry,there was an error",Toast.LENGTH_LONG).show();
+            return;
+        }
+        Business business = new Business(n,Cname,PB,Address,Prov,uid);
+        appState.firebaseReference.child(uid).setValue(business).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
@@ -84,14 +89,17 @@ public class DetailViewActivity extends Activity {
     }
     public void erase(View v)
     {
-        //TODO: Erase contact functionality
-        appState.firebaseReference.child(receivedInfo.getUID()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+        if(uid==null){
+            Toast.makeText(getApplicationContext(),"Sorry,there was an error",Toast.LENGTH_LONG).show();
+            return;
+        }
+        appState.firebaseReference.child(uid).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
                     Toast.makeText(getApplicationContext(),"Operation successful !",Toast.LENGTH_LONG).show();
                 else
-                    Toast.makeText(getApplicationContext(),"Some error occurred!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Some error occurred !",Toast.LENGTH_LONG).show();
             }
         });
         finish();
