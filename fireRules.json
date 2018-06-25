@@ -1,10 +1,10 @@
-{{
+{
   "rules": {
     ".read": true,
     ".write": true,
   "businesses":{
     "$business":{
-      "business number":{
+      "businessNumber":{
         ".validate":"newData.isNumber() && newData.val()>=100000000 &&newData.val()<=999999999"
       },
       "name":{
@@ -12,7 +12,7 @@
           && newData.val().length >=2 
           && newData.val().length <=48"
       },
-      "primary business":{
+      "primaryBusiness":{
             ".validate":"newData.isString()"
       },
       "address":{
@@ -20,8 +20,11 @@
       },
       "province":{
                 ".validate":"newData.isString()"
-      }
-    }
+      },
+        "uid":{
+          ".validate":"newData.isString()"
+        }
+    	}
     }
   }
 }

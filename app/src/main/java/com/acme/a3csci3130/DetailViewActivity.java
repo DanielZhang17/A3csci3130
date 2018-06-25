@@ -44,7 +44,6 @@ public class DetailViewActivity extends Activity {
             businessType.setSelection(arrayAdapter1.getPosition(receivedInfo.getPrimaryBusiness()));
             prov.setSelection(arrayAdapter2.getPosition(receivedInfo.getProvince()));
             uid = receivedInfo.getUID();
-            Toast.makeText(getApplicationContext(),receivedInfo.getUID(),Toast.LENGTH_LONG).show();
         }
     }
 

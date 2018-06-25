@@ -19,15 +19,15 @@ public class Business implements Serializable {
     private  String primaryBusiness;
     private  String address;
     private  String province;
-    private String UID;
+    private String uid;
 
-    public Business(long businessNumber, String name, String primaryBusiness, String address, String province,String UID) {
+    public Business(long businessNumber, String name, String primaryBusiness, String address, String province,String uid) {
         this.businessNumber = businessNumber;
         this.name = name;
         this.primaryBusiness = primaryBusiness;
         this.address = address;
         this.province = province;
-        this.UID = UID;
+        this.uid = uid;
     }
 
     public Business() {
@@ -54,7 +54,7 @@ public class Business implements Serializable {
         return province;
     }
     public  String getUID(){
-        return UID;
+        return uid;
     }
 
     @Exclude
@@ -65,7 +65,7 @@ public class Business implements Serializable {
         result.put("primaryBusiness", primaryBusiness);
         result.put("address", address);
         result.put("province", province);
-        result.put("UID", UID);
+        result.put("uid", uid);
         return result;
     }
 }
