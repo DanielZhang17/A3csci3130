@@ -51,7 +51,6 @@ public class MainActivity extends Activity {
             }
         });
     }
-
     public void create(View v)
     {
         Intent intent=new Intent(this, CreateContactAcitivity.class);
