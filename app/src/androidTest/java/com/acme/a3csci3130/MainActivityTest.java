@@ -49,13 +49,5 @@ public class MainActivityTest{
         onView(withId(R.id.updateButton)).perform(click());
         onView(withText("Item successfully updated !")).inRoot(withDecorView(not(mActivityRule.getActivity().getWindow().getDecorView()))).check(matches(isDisplayed()));
     }
-    @Test
-    public void testDelete() throws InterruptedException{
-        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(2).perform(click());
-        Thread.sleep(1000);
-        onView(withId(R.id.name)).perform(typeText(""),closeSoftKeyboard());
-        Thread.sleep(1000);
-        onView(withId(R.id.deleteButton)).perform(click());
-        onView(withText("Operation successful !")).inRoot(withDecorView(not(mActivityRule.getActivity().getWindow().getDecorView()))).check(matches(isDisplayed()));
-    }
+
 }
