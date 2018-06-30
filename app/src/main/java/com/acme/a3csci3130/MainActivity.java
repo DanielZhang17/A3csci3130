@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 
         //Set-up Firebase
         appData.firebaseDBInstance = FirebaseDatabase.getInstance();
-        appData.firebaseReference = appData.firebaseDBInstance.getReference();
+        appData.firebaseReference = appData.firebaseDBInstance.getReference("businesses");
 
         //Get the reference to the UI contents
         ListView = (ListView) findViewById(R.id.listView);
