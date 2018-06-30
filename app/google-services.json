@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "124590303651",
-    "firebase_url": "https://a3-b2aff.firebaseio.com",
-    "project_id": "a3-b2aff",
-    "storage_bucket": "a3-b2aff.appspot.com"
+    "project_number": "892023860485",
+    "firebase_url": "https://a3db-41564.firebaseio.com",
+    "project_id": "a3db-41564",
+    "storage_bucket": "a3db-41564.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:124590303651:android:6409f2945731fca6",
+        "mobilesdk_app_id": "1:892023860485:android:6409f2945731fca6",
         "android_client_info": {
           "package_name": "com.acme.a3csci3130"
         }
       },
       "oauth_client": [
         {
-          "client_id": "124590303651-3kr540s8gfe9suibvj0hgumm3fctqf3i.apps.googleusercontent.com",
+          "client_id": "892023860485-127bh18ldqq5omm77hiub1pnl3e7uj3t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDPvzoGx3RDJpALYUcfj6NLL-DguZO-mF0"
+          "current_key": "AIzaSyB_-U7qxgsOFZVMrsAe5k_srpmyS3HYvVM"
         }
       ],
       "services": {
